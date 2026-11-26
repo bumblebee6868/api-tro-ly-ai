@@ -102,7 +102,6 @@ async def nhan_tin_nhan(request: Request):
         form = await request.form()
         du_lieu = dict(form)
 
-    print("DU LIEU SMAX GUI:", du_lieu)
     sender_id = str(
         du_lieu.get("sender_id")
         or du_lieu.get("user_id")
