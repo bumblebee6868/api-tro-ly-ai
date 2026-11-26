@@ -88,10 +88,10 @@ NGUYÊN TẮC TƯ VẤN:
 """
 
 # 5. ĐƯỜNG DẪN KIỂM TRA SERVER SỐNG (DÙNG CHO UPTIMEROBOT)
-@app.get("/")
-@app.get("/health")
-def kiem_tra_hoat_dong():
-    return {"status": "ok", "message": "Webhook AI đang hoạt động 24/7"}
+@app.api_route("/", methods=["GET", "HEAD"])
+@app.api_route("/health", methods=["GET", "HEAD"])
+def health_check():
+    return {"status": "ok"}
 
 # 6. ĐƯỜNG DẪN NHẬN TIN NHẮN TỪ SMAX.BOT / PANCAKE
 @app.post("/webhook")
