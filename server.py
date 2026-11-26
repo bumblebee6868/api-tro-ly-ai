@@ -115,6 +115,7 @@ async def nhan_tin_nhan(request: Request):
         or du_lieu.get("text")
         or du_lieu.get("content")
         or du_lieu.get("last_user_input")
+        or du_lieu.get("last content by user")
         or ""
     ).strip()
 
